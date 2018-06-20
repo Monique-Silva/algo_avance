@@ -4,6 +4,7 @@ Number.prototype.toRadians = function() {
 };
 
 
+// Calculates the distance between Grenoble and the given city
 function distanceFromGrenoble(city)
 {
   console.log("distanceFromGrenoble - implement me !");
@@ -13,16 +14,22 @@ function distanceFromGrenoble(city)
   return 1;
 }
 
-function swap(i,j) // Swap the values in array csvData
+// Swap 2 values in array csvData
+// i is the index of the first city
+// j is the index of the second city
+function swap(i,j)
 {
   displayBuffer.push(['swap', i, j]); // Do not delete this line (for display)
   console.log("swap - implement me !");
 
 }
 
-function isLess(A,B)
+// Returns true if city with index i in csvData is closer to Grenoble than city with index j
+// i is the index of the first city
+// j is the index of the second city
+function isLess(i, j)
 {
-  displayBuffer.push(['compare', A, B]); // Do not delete this line (for display)
+  displayBuffer.push(['compare', i, j]); // Do not delete this line (for display)
   console.log("isLess - implement me !");
 }
 
