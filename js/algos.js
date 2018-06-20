@@ -6,7 +6,7 @@ Number.prototype.toRadians = function() {
 
 function distanceFromGrenoble(city)
 {
-  console.log("implement me !");
+  console.log("distanceFromGrenoble - implement me !");
   var GrenobleLat = 45.166667;
   var GrenobleLong = 5.716667;
 
@@ -16,68 +16,69 @@ function distanceFromGrenoble(city)
 function swap(i,j) // Swap the values in array csvData
 {
   displayBuffer.push(['swap', i, j]); // Do not delete this line (for display)
-  console.log("implement me !");
+  console.log("swap - implement me !");
 
 }
 
 function isLess(A,B)
 {
   displayBuffer.push(['compare', A, B]); // Do not delete this line (for display)
+  console.log("isLess - implement me !");
 }
 
 
 function insertsort()
 {
-  console.log("implement me !");
+  console.log("insertsort - implement me !");
 }
+
 function selectionsort()
 {
-  console.log("implement me !");
+  console.log("selectionsort - implement me !");
 }
+
 function bubblesort()
 {
-  console.log("implement me !");
+  console.log("bubblesort - implement me !");
 }
+
 function shellsort()
 {
-  console.log("implement me !");
+  console.log("shellsort - implement me !");
 }
-function mergesort(data)
+
+function mergesort()
 {
-  console.log("implement me !");
+  console.log("mergesort - implement me !");
 }
-function heapsort(data)
+
+function heapsort()
 {
-  console.log("implement me !");
+  console.log("heapsort - implement me !");
 }
 
 function quicksort()
 {
-  console.log("implement me !");
+  console.log("quicksort - implement me !");
 }
-function quick3sort(data)
+function quick3sort()
 {
-  console.log("implement me !");
+  console.log("quick3sort - implement me !");
 }
 
-
-
-var algorithms = {
-  'insert': insertsort,
-  'select': selectionsort,
-  'bubble': bubblesort,
-  'shell': shellsort,
-  'merge': mergesort,
-  'heap': heapsort,
-  'quick': quicksort,
-  'quick3': quick3sort
-}
 
 function sort(algo)
 {
-  if (!algorithms.hasOwnProperty(algo)) {
-    throw 'Invalid algorithm ' + algo;
+  switch (algo)
+  {
+    case 'insert': insertsort();break;
+    case 'select': selectionsort();break;
+    case 'bubble': bubblesort();break;
+    case 'shell': shellsort();break;
+    case 'merge': mergesort();break;
+    case 'heap': heapsort();break;
+    case 'quick': quicksort();break;
+    case 'quick3': quick3sort();break;
+    default: throw 'Invalid algorithm ' + algo;
   }
-  var sort_fn = algorithms[algo];
-  sort_fn();
 }
