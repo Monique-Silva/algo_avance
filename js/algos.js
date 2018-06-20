@@ -1,6 +1,6 @@
 // Converts from degrees to radians.
-Math.toRadians = function(degrees) {
-  return degrees * Math.PI / 180;
+Number.prototype.toRadians = function() {
+  return this * Math.PI / 180;
 };
 
 
