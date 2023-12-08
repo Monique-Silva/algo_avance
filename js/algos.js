@@ -102,7 +102,9 @@ function shellsort() {
     console.log(csvData);
 }
 function mergesort() {
-    console.log("mergesort - implement me !");
+
+
+        console.log("mergesort - implement me !");
 }
 
 function heapsort() {
