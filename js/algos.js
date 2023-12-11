@@ -75,26 +75,26 @@ function selectionsort() {
     console.log(csvData);
 }
 
-function bubblesort() {
-        for (let i = 1; i < csvData.length - 1; i++) {
-            for (let j = 0; j < csvData.length - i; j++) {
-                if (isLess(j + 1, j)) {
-                    swap(j + 1, j);
-                }
+function bubblesortWithoutBoolean() {
+    for (let i = 1; i < csvData.length - 1; i++) {
+        for (let j = 0; j < csvData.length - i; j++) {
+            if (isLess(j + 1, j)) {
+                swap(j + 1, j);
             }
-            console.log(csvData);
         }
+        console.log(csvData);
+    }
 }
 
-function bubblesortaa() {
+function bubblesort() {
     let sizeStop = csvData.length - 1;
-    let swappedNumber = true;
-    while (swappedNumber === true) {
-        swappedNumber = false;
+    let isSwappedThisTurn = true;
+    while (isSwappedThisTurn === true) {
+        isSwappedThisTurn = false;
         for (let j = 0; j < sizeStop; j++) {
             if (isLess(j + 1, j)) {
                 swap(j + 1, j);
-                swappedNumber = true;
+                isSwappedThisTurn = true;
             }
         }
         sizeStop--;
@@ -117,9 +117,15 @@ function shellsort() {
     }
     console.log(csvData);
 }
-
 function mergesort() {
-    console.log("mergesort - implement me !");
+    if (csvData.length <= 1) {
+    return csvData;
+    }
+        let middle = Math.floor(csvData.length / 2);
+        let left = mergesort(csvData.slice(0, middle));
+        let right = mergesort(csvData.slice(middle));
+        return merge(left, right);
+    console.log(mergesort(csvData));
 }
 
 function heapsort() {
