@@ -52,7 +52,7 @@ function insertsort() {
     for (let i = 1; i < csvData.length; i++) {
         let j = i - 1;
         while (j >= 0) {
-            if (isLess(j + 1, j) === true) {
+            if (isLess(j + 1, j)) {
                 swap(j + 1, j);
             }
             j--;
@@ -66,7 +66,7 @@ function selectionsort() {
         console.log(i);
         let smallerIndex = i;
         for (let j = i + 1; j < csvData.length; j++) {
-            if (isLess(j, smallerIndex) === true) {
+            if (isLess(j, smallerIndex)) {
                 smallerIndex = j;
             }
         }
@@ -76,12 +76,28 @@ function selectionsort() {
 }
 
 function bubblesort() {
-    for (let i = 0; i < csvData.length - 1; i++) {
-        for (let j = 0; j < csvData.length - 1; j++) {
-            if (isLess(j + 1, j) === true) {
+        for (let i = 1; i < csvData.length - 1; i++) {
+            for (let j = 0; j < csvData.length - i; j++) {
+                if (isLess(j + 1, j)) {
+                    swap(j + 1, j);
+                }
+            }
+            console.log(csvData);
+        }
+}
+
+function bubblesortaa() {
+    let sizeStop = csvData.length - 1;
+    let swappedNumber = true;
+    while (swappedNumber === true) {
+        swappedNumber = false;
+        for (let j = 0; j < sizeStop; j++) {
+            if (isLess(j + 1, j)) {
                 swap(j + 1, j);
+                swappedNumber = true;
             }
         }
+        sizeStop--;
         console.log(csvData);
     }
 }
@@ -92,7 +108,7 @@ function shellsort() {
         for (let i = gap; i < csvData.length; i++) {
             let j = i;
             while (j >= gap) {
-                if (isLess(j, j-gap) === true) {
+                if (isLess(j, j - gap)) {
                     swap(j, j - gap);
                 }
                 j -= gap;
@@ -101,10 +117,9 @@ function shellsort() {
     }
     console.log(csvData);
 }
+
 function mergesort() {
-
-
-        console.log("mergesort - implement me !");
+    console.log("mergesort - implement me !");
 }
 
 function heapsort() {
